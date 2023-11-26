@@ -13,7 +13,7 @@
 <input type="number" bind:value={b}> =
 {total}
 
-<form method="POST">
+<form method="POST" action="/getRandomNumber">
 	<label>
 		add a todo:
 		<input
