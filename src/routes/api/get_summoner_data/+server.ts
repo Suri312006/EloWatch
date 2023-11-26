@@ -14,7 +14,13 @@ let data:String = ''
 
 await client
   .initialize({
-    region: 'na', // defaults to 'na' anyways.
+    region: 'na',
+    cache: {
+      enable: {
+        api: false,
+        dragon: false
+      } // Enable or disable caching
+    } // defaults to 'na' anyways.
   })
   .then(async () => {
     // After initialization, you can use the client to make requests

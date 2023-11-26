@@ -1,6 +1,0 @@
-{
-	"runtime": "nodejs16.x",
-	"handler": "..\\..\\..\\..\\Coding\\repos\\EloWatch\\.svelte-kit\\vercel-tmp\\index.js",
-	"launcherType": "Nodejs",
-	"experimentalResponseStreaming": true
-}
