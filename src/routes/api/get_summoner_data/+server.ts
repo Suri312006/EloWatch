@@ -1,5 +1,7 @@
 import { Client } from 'shieldbow';
 
+import { LolApi, Constants } from 'twisted'
+
 export const config = {
 	runtime: 'nodejs16.x'
 };
@@ -41,11 +43,12 @@ export const config = {
   
 //   }
 
-import { LolApi, Constants } from 'twisted'
-
 const api = new LolApi()
 
 export async function GET () {
-  return await api.Summoner.getByName('Hide on bush', Constants.Regions.KOREA)
+
+  let summoner = await await api.Summoner.getByName('Hide on bush', Constants.Regions.KOREA)
+
+  return new Response(JSON.stringify({Kayn_data: summoner.response.name}), {status: 200})
 }
 
