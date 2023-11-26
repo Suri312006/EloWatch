@@ -1,10 +1,5 @@
 import { Client } from 'shieldbow';
 
-export const config = {
-	runtime: 'nodejs16.x'
-};
-
-
 
 export async function GET () {
     
@@ -18,7 +13,9 @@ await client
     cache: {
       enable: {
         api: false,
-        dragon: false
+        dragon: {
+          champions:false
+        }
       } // Enable or disable caching
     } // defaults to 'na' anyways.
   })
