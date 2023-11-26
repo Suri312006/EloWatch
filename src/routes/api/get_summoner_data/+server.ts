@@ -49,6 +49,8 @@ export async function GET () {
 
   let summoner = await api.Summoner.getByName('Hide on bush', Constants.Regions.KOREA)
 
-  return new Response(JSON.stringify({Kayn_data: summoner.response.name.toString()}), {status: 200})
+
+  
+  return new Response(JSON.stringify({Kayn_data: summoner.response.id.toString()}), {status: 200})
 }
 
