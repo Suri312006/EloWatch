@@ -1,7 +1,7 @@
 import { Client } from 'shieldbow';
 
 export const config = {
-	runtime: 'edge'
+	runtime: 'nodejs16.x'
 };
 
 
