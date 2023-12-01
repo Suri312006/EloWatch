@@ -37,6 +37,7 @@
 	"type": "module",
 	"dependencies": {
 		"node-stdlib-browser": "^1.2.0",
-		"shieldbow": "^2.2.1"
+		"shieldbow": "^2.2.1",
+		"twisted": "^1.54.0"
 	}
 }
