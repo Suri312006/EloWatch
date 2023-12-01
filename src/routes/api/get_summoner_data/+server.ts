@@ -48,9 +48,6 @@ const api = new LolApi({key: "RGAPI-a06fe8b7-5b34-43e0-8cc4-28c6ca64ccb4"})
 export async function GET () {
 
   let summoner = await api.Summoner.getByName('Hide on bush', Constants.Regions.KOREA)
-
-
-  
   return new Response(JSON.stringify({Kayn_data: summoner.response.id.toString()}), {status: 200})
 }
 
