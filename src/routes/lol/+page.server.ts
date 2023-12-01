@@ -6,7 +6,7 @@ export async function load ({fetch}){
     console.log(thiny.status)
     const lol = await thiny.json()
 
-    console.log(lol)
+    // console.log(lol)
 
         return {    
         data: lol.Kayn_data
