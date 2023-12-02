@@ -3,10 +3,12 @@
     
     export let data: PageData;
 
+    console.log(data)
 
 
 </script>
 
 <main>
-{data.data}
+{data.summoner.name}
+<img src={data.summoner.pfpLink} alt="pfp">
 </main>
