@@ -1,27 +1,25 @@
-<script>
-	let a = 0;
-	let b = 0;
-	let total = 0;
+<script lang="ts">
+	import { goto } from "$app/navigation";
 
-	async function roll() {
-		const response = await fetch('/api/random');
-		total = await response.json();
+	let formData = {
+		SummonerName: ''
+	}
+
+	const SummonerLink = (event: Event) => {
+		event.preventDefault()
+
+		goto(`/lol/${formData.SummonerName}`)
 	}
 </script>
 
-<input type="number" bind:value={a}> +
-<input type="number" bind:value={b}> =
-{total}
-
-<form method="POST" action="/getRandomNumber">
-	<label>
-		add a todo:
+<form method="POST" on:submit={SummonerLink}>
 		<input
-			name="description"
+			type='text'
+			id='summoner_name'
+			bind:value={formData.SummonerName}
 			autocomplete="off"
+			placeholder="Summoner name..."
 		/>
-	</label>
+
 </form>
 
-
-<button on:click={roll}>Calculate</button>
