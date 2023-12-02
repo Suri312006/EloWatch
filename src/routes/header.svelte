@@ -67,9 +67,7 @@
 			<h1 class="pt-2 text-5xl font-bold hover:text-primary-400">EloWatch</h1>
 		</a>
 	</svelte:fragment>
-
-	<!-- end section -->
-	<svelte:fragment slot="trail">
+    
 	{#if show_search}
     <form method="POST" on:submit={SummonerLink}>
         <input
@@ -82,6 +80,9 @@
     </form>
 
     {/if}	
+	<!-- end section -->
+	<svelte:fragment slot="trail">
+
 
 		<div id="desktop-View" class="mr-10 justify-between max-md:hidden">
 			<ul class="flex min-w-[25rem] items-center justify-evenly space-x-5 text-3xl font-medium">
