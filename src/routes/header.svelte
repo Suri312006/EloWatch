@@ -7,10 +7,7 @@
 	import { popup } from '@skeletonlabs/skeleton';
 	import type { PopupSettings } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
-
 	import { page } from '$app/stores';
-
-
 
 	const drawerStore = getDrawerStore();
 
@@ -43,12 +40,11 @@
 		drawerStore.open(drawerSettings);
 	};
 
-    //* yo reactive component!!!
-    $: show_search = $page.url.pathname != "/"
+	//* yo reactive component!!!
+	$: show_search = $page.url.pathname != '/';
 
-    
+	//lets get signup working for now i guess
 
-    console.log(show_search)
 </script>
 
 <AppBar
@@ -67,23 +63,20 @@
 			<h1 class="pt-2 text-5xl font-bold hover:text-primary-400">EloWatch</h1>
 		</a>
 	</svelte:fragment>
-    
-	{#if show_search}
-    <form method="POST" on:submit={SummonerLink}>
-        <input
-            type="text"
-            id="summoner_name"
-            bind:value={formData.SummonerName}
-            autocomplete="off"
-            placeholder="Summoner name..."
-        />
-    </form>
 
-    {/if}	
+	{#if show_search}
+		<form method="POST" on:submit={SummonerLink}>
+			<input
+				type="text"
+				id="summoner_name"
+				bind:value={formData.SummonerName}
+				autocomplete="off"
+				placeholder="Summoner name..."
+			/>
+		</form>
+	{/if}
 	<!-- end section -->
 	<svelte:fragment slot="trail">
-
-
 		<div id="desktop-View" class="mr-10 justify-between max-md:hidden">
 			<ul class="flex min-w-[25rem] items-center justify-evenly space-x-5 text-3xl font-medium">
 				<button use:popup={popupClick} class="bg-transparent font-bold hover:text-primary-400">

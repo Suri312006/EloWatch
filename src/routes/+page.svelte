@@ -10,6 +10,8 @@
 
 		goto(`/lol/${formData.SummonerName}`)
 	}
+
+	
 </script>
 
 <form method="POST" on:submit={SummonerLink}>
