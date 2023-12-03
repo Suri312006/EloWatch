@@ -7,17 +7,13 @@ export const actions = {
 
         let email = formdata.get('email')
         let password = formdata.get("password")
-        let password_check = formdata.get("password_check")
-        //* need a simple password check here, and then send off data to supabase
-        if (password != password_check){
-            return fail(400, {email, password_mismatch: true})
-        }
-        
-        let { data, error } = await event.locals.supabase.auth.signUp({
+ 
+        let { data, error } = await event.locals.supabase.auth.signInWithPassword({
             email: email!.toString(),
             password: password!.toString()
           })
         
+        //todo need some sort of error handling
           console.log(data)
 
         //best way to handle this??
