@@ -3,7 +3,7 @@
 
     export let data;
 
-	export let form: ActionData;
+	// export let form: ActionData;
 
     console.log(data.session)
 </script>

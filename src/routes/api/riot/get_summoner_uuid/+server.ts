@@ -1,4 +1,3 @@
-import { Client } from 'shieldbow';
 
 import { LolApi, Constants } from 'twisted'
 import { MY_RIOT_API_KEY} from '$env/static/private'
