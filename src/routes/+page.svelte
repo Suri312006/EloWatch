@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
 
+	export let data;
+
+	console.log(data.session)
+
 	let formData = {
 		SummonerName: ''
 	}

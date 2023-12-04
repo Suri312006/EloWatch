@@ -16,7 +16,9 @@
 
 	const drawerStore = getDrawerStore();
 
-	
+	export let data;
+
+	console.log(data.session)
 </script>
 
 <Drawer position="right" width=" w-48" duration={100} padding=" py-5" rounded="">

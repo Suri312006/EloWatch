@@ -50,7 +50,7 @@ export const actions = {
 				})
 			}
 
-            console.log("google signin data", data)
+            console.log(data.url)
 
 			throw redirect(303, data.url)
 		}

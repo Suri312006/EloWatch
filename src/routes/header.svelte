@@ -8,6 +8,7 @@
 	import type { PopupSettings } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { enhance, type SubmitFunction } from '$app/forms';
 
 	const drawerStore = getDrawerStore();
 
@@ -79,6 +80,11 @@
 	<svelte:fragment slot="trail">
 		<div id="desktop-View" class="mr-10 justify-between max-md:hidden">
 			<ul class="flex min-w-[25rem] items-center justify-evenly space-x-5 text-3xl font-medium">
+				
+				<form action="/logout" method="POST" >
+					<button type="submit" class="btn btn-primary">Logout</button>
+				</form>
+				
 				<button use:popup={popupClick} class="bg-transparent font-bold hover:text-primary-400">
 					SOCIALS
 				</button>
