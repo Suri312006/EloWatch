@@ -20,6 +20,15 @@
 
 </script>
 
+{ #if data.session}
+<h1>{data.session.user.email}</h1>
+{ :else}
+<h1> no user lol </h1>
+
+{/if}
+
+
+
 <form method="POST" on:submit={SummonerLink}>
 		<input
 			type='text'
