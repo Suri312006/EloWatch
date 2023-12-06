@@ -1,24 +1,20 @@
 <script lang="ts">
 	import '../app.pcss';
 	import CustomHeader from './header.svelte';
-
 	import { AppShell, Drawer } from '@skeletonlabs/skeleton';
 	import { initializeStores } from '@skeletonlabs/skeleton';
-
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
-
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
-
 	initializeStores();
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
+	import { invalidateAll } from '$app/navigation';
 
 	const drawerStore = getDrawerStore();
 
-	export let data;
 
-	console.log(data.session)
 </script>
 
 <Drawer position="right" width=" w-48" duration={100} padding=" py-5" rounded="">
@@ -26,10 +22,8 @@
 
 	<div class="grid grid-cols-1 divide-y">
 		<div class="flex justify-center items-center">
-			<a
-				href="/"
-				class="hover:text-primary-400 font-bold text-xl p-4"
-				on:click={drawerStore.close}>HOME</a
+			<a href="/" class="hover:text-primary-400 font-bold text-xl p-4" on:click={drawerStore.close}
+				>HOME</a
 			>
 		</div>
 		<div class="flex justify-center items-center">
@@ -55,7 +49,7 @@
 			>
 		</div>
 
-		<Accordion >
+		<Accordion>
 			<AccordionItem open={false}>
 				<svelte:fragment slot="summary">
 					<div
@@ -64,7 +58,7 @@
 						SOCIALS
 					</div>
 				</svelte:fragment>
-	
+
 				<svelte:fragment slot="content">
 					<ul class="flex flex-col justify-center items-center space-y-2">
 						<li>
@@ -73,17 +67,17 @@
 								target="_blank"
 								class="btn"
 							>
-								<i class="fab fa-instagram md:hover:text-primary-400 text-2xl"></i>
+								<i class="fab fa-instagram md:hover:text-primary-400 text-2xl" />
 							</a>
 						</li>
 						<li>
 							<a href="https://github.com/T-R-A-C-E" target="_blank" class="btn">
-								<i class="fab fa-github md:hover:text-primary-400 text-2xl"></i>
+								<i class="fab fa-github md:hover:text-primary-400 text-2xl" />
 							</a>
 						</li>
 						<li>
 							<a href="https://discord.gg/wUWu7hJPds" target="_blank" class="btn">
-								<i class="fab fa-discord md:hover:text-primary-400 text-2xl"></i>
+								<i class="fab fa-discord md:hover:text-primary-400 text-2xl" />
 							</a>
 						</li>
 					</ul>
@@ -91,33 +85,26 @@
 			</AccordionItem>
 		</Accordion>
 
-		<span class="flex-grow"> </span>
+		<span class="flex-grow" />
 	</div>
 
-	<div class="grid grid-cols-1 divide-y">
-		
-	</div>
+	<div class="grid grid-cols-1 divide-y" />
 </Drawer>
 
-<div class=' '>
+<div class=" ">
 	<!-- <div class=' lg:flex-grow '> -->
 
 	<AppShell>
 		<!-- <AppShell class='lg:backdrop-blur lg:backdrop-brightness-100'> -->
 		<!-- <AppShell class='lg:backdrop-blur lg:backdrop-brightness-100 lg:border lg:border-l-0 lg:border-r-0 lg:border-primary-600'> -->
 
-	<svelte:fragment slot="header"><CustomHeader /></svelte:fragment>
-	<!-- (sidebarLeft) -->
+		<svelte:fragment slot="header"><CustomHeader /></svelte:fragment>
+		<!-- (sidebarLeft) -->
 
-	<!-- (pageHeader) -->
-	<!-- Router Slot -->
-	<slot/>
-	<!-- ---- / ---- -->
-	<!-- <svelte:fragment slot="pageFooter"><Footer /></svelte:fragment> -->
-</AppShell>
+		<!-- (pageHeader) -->
+		<!-- Router Slot -->
+		<slot />
+		<!-- ---- / ---- -->
+		<!-- <svelte:fragment slot="pageFooter"><Footer /></svelte:fragment> -->
+	</AppShell>
 </div>
-
-  
-
-
- 

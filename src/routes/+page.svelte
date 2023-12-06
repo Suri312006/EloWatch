@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
+	import { onMount } from "svelte";
+	import { writable } from "svelte/store";
 
 	export let data;
 
-	console.log(data.session)
+	console.log(data)
 
 	let formData = {
 		SummonerName: ''
@@ -15,7 +17,7 @@
 		goto(`/lol/${formData.SummonerName}`)
 	}
 
-	
+
 </script>
 
 <form method="POST" on:submit={SummonerLink}>

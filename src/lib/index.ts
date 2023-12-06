@@ -1,1 +1,6 @@
-// place files you want to import through the `$lib` alias in this folder.
+import { createSupabaseLoadClient } from "@supabase/auth-helpers-sveltekit"
+
+// import {
+// 	PUBLIC_SUPABASE_URL_1
+	
+// } from "$env/static/private"
