@@ -4,21 +4,15 @@ import type { PageServerLoad } from './$types';
 import { AuthApiError, type Provider } from '@supabase/supabase-js';
 
 export const load: PageServerLoad = async ({ url, locals: { supabase } }) => {
-	console.log('ran');
+
 	const code = url.searchParams.get('code');
-
-	let session;
 	if (code) {
-		session = await supabase.auth.exchangeCodeForSession(code);
-	}
-
-	// if the user is already logged in return them to the account page
-	if (session) {
+		await supabase.auth.exchangeCodeForSession(code);
 		throw redirect(303, '/');
 
 	}
 
-	return { url: url.origin };
+	return 
 };
 
 const OAUTH_PROVIDERS = ['google'];
