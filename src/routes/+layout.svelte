@@ -93,7 +93,7 @@
 <div class=" ">
 	<!-- <div class=' lg:flex-grow '> -->
 
-	<AppShell>
+	<AppShell class=' '>
 		<!-- <AppShell class='lg:backdrop-blur lg:backdrop-brightness-100'> -->
 		<!-- <AppShell class='lg:backdrop-blur lg:backdrop-brightness-100 lg:border lg:border-l-0 lg:border-r-0 lg:border-primary-600'> -->
 
